@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Login</title>
+	</head>
+	<body>
+		{% if errormessage %}
+        	<strong>{{errormessage}}</strong>
+        {% endif %}
+		<h2>{{name}}</h2>
+		<form action="/blog/login/" method="post">{% csrf_token %}
+			Username : <input type="text" name="username">
+			<br>
+			Password :  <input type="password" name="password">
+			<br>
+			<input type="submit" value="Login">
+			<br>
+			Not a memeber <a href="/blog/register/">SignUp Here</a>
+	</form>
+	</body>
+</html>

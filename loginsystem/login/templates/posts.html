@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Blog</title>
+		<style type="text/css">
+				.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+				.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+				.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+				.tg .tg-s6z2{text-align:center}
+				.create{float: right;margin-right: 200px;}
+		</style>
+	</head>
+	<body>
+		<div class="create">
+			<p>Welcome</p>
+			<a href="/blog/create/">Create Blog</a>
+		</div>
+		<h2 style="margin-left: 625px">Blog Posts</h2>
+		 {% if allPosts %}
+		<table class="tg">
+		  <tr>
+		    <th class="tg-031e">Title</th>
+		    <th class="tg-031e">Description</th>
+		    <th class="tg-031e">Published</th>
+		    <th class="tg-031e">Created By</th>
+		    <th class="tg-031e">Action</th>
+		  </tr>
+		  {% for posts in allPosts %}
+		  <tr>
+		  	<td>
+		  		<a href="/blog/show/{{posts.id}}">{{posts.title}}</a>
+		  	</td>
+		  	<td>{{posts.description}}</td>
+		  	<td>{{posts.published}}</td>
+		  	<td>{{posts.created_by}}</td>
+		  	<td>
+		  		<a href="/blog/edit/{{posts.id}}">Edit</a>/<a href="/blog/delete/{{posts.id}}">Delete</a>
+		  	</td>
+		  </tr>
+		  {% endfor%}
+		</table>
+		{% else %}
+		<p>No posts are available.</p>
+		{% endif %}
+	</body>
+</html>

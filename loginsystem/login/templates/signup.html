@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>Register</title>
+	</head>
+	<body>
+		<form method="post" action="/blog/signup/">{% csrf_token %}
+			{% if errormessage %}
+        	<strong>{{errormessage}}</strong>
+        	{% endif %}
+			<table width="" height="249" border="0" align="center" style="border:3px solid #008040">
+			<tr>
+			<td colspan="3" align="center"><h2>Register Here</h2> </td>
+			</tr>
+			<tr>
+				<td width="" align="right">Username *</td>
+				<td width="184" align="center"><input type="text" name="username" /> </td>
+			</tr>
+			<tr>
+				<td align="right">Password *</td>
+				<td align="center"><input type="password" name="pwd"/></td>
+			</tr>
+			<tr>
+				<td align="right">Confirm Password *</td>
+				<td align="center"><input type="password" name="cnfrmpwd" /></td>
+			</tr>
+			<tr>
+				<td width="" align="right">Firstname *</td>
+				<td width="184" align="center"><input type="text" name="firstname" /></td>
+			</tr>
+			<tr>
+				<td width="" align="right">Lastname</td>
+				<td width="184" align="center"><input type="text" name="lastname" /> </td>
+			</tr>
+			<tr>
+				<td align="right">Email ID *</td>
+				<td align="center"><input type="text" name="email"/></td>
+			</tr>
+			<tr>
+				<td align="right">Date of Birth *</td>
+				<td align="center"><input type="text" name="dob"/></td>
+			</tr>
+			<tr>
+				<td align="right">Gender *</td>
+				<td align="center"><input type="radio" name="gender" value="Male" checked enabled/> Male <input type="radio" name="gender" value="Female"/> Female</td>
+			</tr>
+			<tr>
+			<td align="right">Terms &amp; Conditions </td>
+			<td><input type="checkbox" name="accept" value="accept" />
+			  I Accept it </td>
+			</tr>
+			<tr>
+				<td align="right">&nbsp;</td>
+				<td align="center"><input type="submit" name="register" value=" Register "/></td>
+			</tr>
+			</table>
+		</form>
+	</body>
+</html>

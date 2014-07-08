@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'login'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,14 +52,21 @@ ROOT_URLCONF = 'loginsystem.urls'
 
 WSGI_APPLICATION = 'loginsystem.wsgi.application'
 
+TEMPLATE_DIRS = ('/home/webonise/projects/django/apps2014/loginsystem/login/templates',)
+
+
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':   'django',
+        'USER':   'root',
+        'PASSWORD':'webonise6186',
+        'HOST':     'localhost',
+        'PORT':     '3306',
     }
 }
 
